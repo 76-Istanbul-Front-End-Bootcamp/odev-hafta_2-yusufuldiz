@@ -7,7 +7,7 @@ var person = {
   name: "John",
   message: function () {    
     console.log("Hello, " + this.name)
-  }.bind(person)
+  }.call(person)
 }
 
 var messageFunc = person.message
@@ -28,7 +28,7 @@ var numbers = {
     this.numbers[0].map(function(number, numberIndex){
         const result = number * this.numbers[1];
         console.log(result)
-    })
+    }.bind(numbers))
   }
 };
 
@@ -42,8 +42,15 @@ numbers.multiply();
   Ornek : isValidName("John") true donmeli
   Ornek : isValidName(" J ohn") false donmeli
 */
+
+var check = /^[A-Z]+$/i;
+
 function isValidName(name){
 
+var x = name;
+
+if (typeof x === 'string' && x != "" && x.length >= 2)
+return x.match(check);
 }
 
 /*
