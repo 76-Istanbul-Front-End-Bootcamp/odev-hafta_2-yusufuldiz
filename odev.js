@@ -7,7 +7,7 @@ var person = {
   name: "John",
   message: function () {    
     console.log("Hello, " + this.name)
-  }.call(person)
+  }.bind(person)
 }
 
 var messageFunc = person.message
