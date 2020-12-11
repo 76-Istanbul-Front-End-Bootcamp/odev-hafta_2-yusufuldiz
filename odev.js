@@ -47,11 +47,14 @@ var check = /^[A-Z]+$/i;
 
 function isValidName(name){
 
-var x = name;
+var isim = name;
 
-if (typeof x === 'string' && x != "" && x.length >= 2)
-return x.match(check);
+if (typeof isim === 'string' && isim.length >= 2){
+return isim.match(check);
 }
+}
+
+isValidName("John")
 
 /*
   Odev 4:
@@ -66,7 +69,14 @@ return x.match(check);
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
 function katilimSaati(dersSayisi, dersSuresi){
+var amount = dersSayisi;
+var time = dersSuresi;
+  if ((typeof amount === 'string' || typeof amount === 'number') && (typeof time === 'string' || typeof time === 'number')){
+   return amount * time;
 
+  } return false;
 }
+
+katilimSaati(5,"40");
 
 
